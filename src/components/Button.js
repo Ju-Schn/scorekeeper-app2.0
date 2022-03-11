@@ -21,6 +21,7 @@ const ButtonStyled = styled.button`
     css`
       background-color: #ff9100;
       color: #03045e;
+      font-weight: bold;
     `}
 
   ${props =>
