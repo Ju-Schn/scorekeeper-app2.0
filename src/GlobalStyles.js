@@ -16,4 +16,13 @@ input,
 textarea, 
 label {
   font-size: 1rem;
+}
+
+button {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }`;
