@@ -17,6 +17,7 @@ const Wrapper = styled.section`
   color: #03045e;
   justify-content: flex-end;
   align-items: center;
+  padding: 1rem;
 `;
 
 const Name = styled.span`
