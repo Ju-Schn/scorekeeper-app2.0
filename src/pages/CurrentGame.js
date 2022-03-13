@@ -15,18 +15,28 @@ export default function CurrentGame({ onDecrement, onIncrement }) {
     const newPlayer = {
       id: nanoid(),
       name: playerName,
-      score: '0',
+      score: 0,
     };
     setPlayers([...players, newPlayer]);
     setPlayerName('');
+  }
+
+  function handleIncrement(index) {
+    const currentPlayer = players[index];
+    setPlayers([...players.slice(0, index), { ...currentPlayer, score: currentPlayer.score + 1 }, ...players.slice(index + 1)]);
+  }
+
+  function handleDecrement(index) {
+    const currentPlayer = players[index];
+    setPlayers([...players.slice(0, index), { ...currentPlayer, score: currentPlayer.score - 1 }, ...players.slice(index + 1)]);
   }
 
   return (
     <GridContainer>
       <Title title="Name of Game" />
       <PlayerContainer>
-        {players.map(({ name, score, id }) => (
-          <Player key={id} name={name} score={score} onDecrement={onDecrement} onIncrement={onIncrement} />
+        {players.map(({ name, score, id }, index) => (
+          <Player key={id} name={name} score={score} onDecrement={() => handleDecrement(index)} onIncrement={() => handleIncrement(index)} />
         ))}
       </PlayerContainer>
       <AddPlayer>
