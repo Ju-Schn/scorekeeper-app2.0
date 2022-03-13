@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
-export default function CurrentGame({ onDecrement, onIncrement }) {
+export default function CurrentGame({ title }) {
   const [playerName, setPlayerName] = useState('');
   const [players, setPlayers] = useState([]);
 
@@ -33,7 +33,7 @@ export default function CurrentGame({ onDecrement, onIncrement }) {
 
   return (
     <GridContainer>
-      <Title title="Name of Game" />
+      <Title title={title} />
       <PlayerContainer>
         {players.map(({ name, score, id }, index) => (
           <Player key={id} name={name} score={score} onDecrement={() => handleDecrement(index)} onIncrement={() => handleIncrement(index)} />
