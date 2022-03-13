@@ -1,7 +1,8 @@
-import './App.css';
+import CurrentGame from './pages/CurrentGame';
+import { useState } from 'react';
 
 function App() {
-  return <div className="App"></div>;
+  return <CurrentGame />;
 }
 
 export default App;
