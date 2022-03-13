@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './GlobalStyles';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MemoryRouter>
-      <GlobalStyles />
+    <GlobalStyles />
+    <BrowserRouter>
       <App />
-    </MemoryRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
