@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export default function Input({ description, placeholder, onChange }) {
+export default function Input({ description, placeholder, onChange, value, name }) {
   return (
     <Wrapper>
-      <StyledDescription>{description}</StyledDescription>
-      <StyledInput onChange={onChange} placeholder={placeholder}></StyledInput>
+      <StyledDescription htmlFor={name}>{description}</StyledDescription>
+      <StyledInput type="text" value={value} id={name} onChange={onChange} placeholder={placeholder}></StyledInput>
     </Wrapper>
   );
 }
