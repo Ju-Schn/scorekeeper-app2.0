@@ -1,12 +1,12 @@
 import Player from '../components/Player';
 import Title from '../components/Title';
 import Input from '../components/Input';
-import Button from '../components/Button';
+import { StyledButton } from '../components/Button';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
-export default function CurrentGame({ title }) {
+export default function CurrentGame({ nameOfGame }) {
   const [playerName, setPlayerName] = useState('');
   const [players, setPlayers] = useState([]);
 
@@ -33,19 +33,20 @@ export default function CurrentGame({ title }) {
 
   return (
     <GridContainer>
-      <Title title={title} />
+      <Title title={nameOfGame} />
       <PlayerContainer>
         {players.map(({ name, score, id }, index) => (
           <Player key={id} name={name} score={score} onDecrement={() => handleDecrement(index)} onIncrement={() => handleIncrement(index)} />
         ))}
       </PlayerContainer>
       <AddPlayer>
-        <Input onChange={event => setPlayerName(event.target.value)} value={playerName} placeholder="e.g. Harry Potter" description="Enter Name of Player:" name="playerName" />
-        <Button onClick={handleSubmit} children="Add Player" />
+        <Input name="playerName" onChange={event => setPlayerName(event.target.value)} value={playerName} placeholder="e.g. Harry Potter" Label="Enter Name of Player:" />
+        <StyledButton onClick={handleSubmit}>Add Player</StyledButton>
       </AddPlayer>
     </GridContainer>
   );
 }
+
 const AddPlayer = styled.div`
   display: flex;
   flex-direction: column;

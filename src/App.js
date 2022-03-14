@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [nameOfGame, setNameOfGame] = useState('');
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   function createGame({ nameOfGame }) {
     setNameOfGame(nameOfGame);
     navigate('./current-game');

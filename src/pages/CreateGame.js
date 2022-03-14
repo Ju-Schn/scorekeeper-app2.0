@@ -1,10 +1,11 @@
-import Button from '../components/Button';
+import { StyledButton } from '../components/Button';
 import Input from '../components/Input';
 import { useState } from 'react';
 
 export default function CreateGame({ onCreateGame }) {
   const [nameOfGame, setNameOfGame] = useState('');
-  function handleSubmit(event) {
+
+  function handleCreateGame(event) {
     event.preventDefault();
     onCreateGame({
       nameOfGame,
@@ -14,8 +15,8 @@ export default function CreateGame({ onCreateGame }) {
 
   return (
     <>
-      <Input onChange={event => setNameOfGame(event.target.value)} value={nameOfGame} placeholder="e.g. Decrypto" description="Which game do you want to play?" />
-      <Button children="Create Game" onClick={handleSubmit} />
+      <Input name="nameOfGame" onChange={event => setNameOfGame(event.target.value)} value={nameOfGame} placeholder="e.g. Decrypto" description="Which game do you want to play?" />
+      <StyledButton onClick={handleCreateGame}>Create Game</StyledButton>
     </>
   );
 }

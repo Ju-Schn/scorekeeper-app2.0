@@ -1,13 +1,17 @@
 import styled from 'styled-components';
-import Button from './Button';
+import { StyledButton } from './Button';
 
 export default function Player({ name, score, onDecrement, onIncrement }) {
   return (
     <Wrapper>
       <Name>{name}</Name>
-      <Button aria-label="Decrease Score" onClick={onDecrement} children={'-'} />
+      <StyledButton aria-label="Decrease Score" onClick={onDecrement}>
+        -
+      </StyledButton>
       <Score>{score}</Score>
-      <Button aria-label="Increase Score" onClick={onIncrement} children={'+'} />
+      <StyledButton aria-label="Increase Score" onClick={onIncrement}>
+        +
+      </StyledButton>
     </Wrapper>
   );
 }

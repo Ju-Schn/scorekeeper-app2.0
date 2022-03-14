@@ -1,14 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export default function Button({ children, onClick, variant }) {
-  return (
-    <ButtonStyled variant={variant} onClick={onClick}>
-      {children}
-    </ButtonStyled>
-  );
-}
-
-const ButtonStyled = styled.button`
+export const StyledButton = styled.button`
   border: none;
   border-radius: 30px;
   padding: 0.5rem 1rem;
