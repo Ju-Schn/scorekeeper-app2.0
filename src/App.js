@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import CurrentGame from './pages/CurrentGame';
 import CreateGame from './pages/CreateGame';
 import { useState } from 'react';
-import { navigate } from '@storybook/addon-links';
 
 function App() {
   const [nameOfGame, setNameOfGame] = useState('');
+  let navigate = useNavigate();
   function createGame({ nameOfGame }) {
     setNameOfGame(nameOfGame);
     navigate('./current-game');
