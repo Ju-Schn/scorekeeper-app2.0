@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function Input({ description, placeholder, onChange, value, name }) {
+export default function Input({ labelText, placeholder, onChange, value, name }) {
   return (
     <Wrapper>
-      <StyledDescription htmlFor={name}>{description}</StyledDescription>
+      <Label htmlFor={name}>{labelText}</Label>
       <StyledInput type="text" value={value} id={name} onChange={onChange} placeholder={placeholder}></StyledInput>
     </Wrapper>
   );
@@ -17,7 +17,7 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
-const StyledDescription = styled.label`
+const Label = styled.label`
   color: #03045e;
 `;
 const StyledInput = styled.input`
